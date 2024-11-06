@@ -1,5 +1,6 @@
 package com.swetzell.comandos;
 
+import com.swetzell.audio.VoiceChannelConnector;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import com.swetzell.audio.PlayerManger;
 
@@ -11,6 +12,10 @@ public class CommandHandler {
         } else if (message.startsWith("!play ")) {
             String url = message.substring(6);
             PlayerManger.getInstance().loadAndPlay(event.getGuild(), url);
+
+            // Conectar al canal de voz
+            VoiceChannelConnector connector = new VoiceChannelConnector();
+            connector.connectToVoiceChannel(event.getGuild(), event.getMember());
         }
     }
 }
