@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 public class DiscordBot extends ListenerAdapter {
 
     public static void main(String[] args) throws Exception {
-        String token = "MTEzNzE2ODU0NDMxNzA1MDkyMA.Gx-WFo.8h2P0cl55nvgq9JaQralA2TZR2HxAdrGBAHJzg";
+        String token = "TOKEN";
 
         JDABuilder builder = JDABuilder.createDefault(token);
         builder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
