@@ -6,6 +6,9 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+
 public class DiscordBot extends ListenerAdapter {
 
     public static void main(String[] args) throws Exception {
@@ -25,6 +28,10 @@ public class DiscordBot extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         String message = event.getMessage().getContentRaw();
-        CommandHandler.handleCommand(event, message);
+        try {
+            CommandHandler.handleCommand(event, message);
+        } catch (GeneralSecurityException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
