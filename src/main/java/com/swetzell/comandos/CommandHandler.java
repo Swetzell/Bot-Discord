@@ -11,7 +11,7 @@ public class CommandHandler {
 
     public static void handleCommand(MessageReceivedEvent event, String message) throws GeneralSecurityException, IOException {
         if (message.equalsIgnoreCase("!hola")) {
-            event.getChannel().sendMessage("¡Hola! Soy tu bot de Discord en Java.").queue();
+            event.getChannel().sendMessage("¡Hola! Soy SpogeBot!").queue();
         } else if (message.startsWith("!play ")) {
             String url = message.substring(6);
             PlayerManger.getInstance().loadAndPlay(event.getGuild(), url);
