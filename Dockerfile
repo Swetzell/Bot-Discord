@@ -1,5 +1,5 @@
 # Usa una imagen base de OpenJDK 19
-FROM openjdk:19-jdk
+FROM openjdk:21-jdk
 
 # Establece el directorio de trabajo
 WORKDIR /app
